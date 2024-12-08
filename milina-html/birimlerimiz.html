@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <title>milina</title>
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/responsive.css">
+      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+      <style>
+         .we_do {
+            display: none;
+         }
+         .active {
+            display: block;
+         }
+      </style>
+   </head>
+   <body class="main-layout">
+      <header>
+         <div class="header">
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                     <div class="full">
+                        <div class="center-desk">
+                           <div class="logo">
+                              <a href="index.html"><img src="images/başlogo.jpg" alt="#" /></a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-7 col-lg-7 col-md-9 col-sm-9">
+                     <nav class="navigation navbar navbar-expand-md navbar-dark">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                           <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarsExample04">
+                           <ul class="navbar-nav mr-auto">
+                              <li class="nav-item">
+                                 <a class="nav-link" href="index.html">Anasayfa</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="about.html">Hakkımızda</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="we-do.html">Ürünlerimiz</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="pricing.html">Misyon-Vizyon&Değerlerimiz</a>
+                              </li>
+                              <li class="nav-item dropdown">
+                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Birimlerimiz
+                                 </a>
+                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#" onclick="toggleUnit('unit1')">Tırnak Bakım Üniteleri</a>
+                                    <a class="dropdown-item" href="#" onclick="toggleUnit('unit2')">Nail Art Tasarım Stüdyosu</a>
+                                    <a class="dropdown-item" href="#" onclick="toggleUnit('unit3')">Spa ve Manikür/Pedikür Hizmetleri</a>
+                                 </div>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="contact.html">İletişim</a>
+                              </li>
+                           </ul>
+                        </div>
+                     </nav>
+                  </div>
+                  <div class="col-md-2">
+                     <ul class="social_icon">
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </header>
+
+      <!-- Birimlerimiz -->
+      <div class="back_re">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="title">
+                     <h2>Birimlerimiz</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- Birimlerimiz içerik kısımları -->
+      <div class="we_do slin active" id="unit1">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <h3 style="font-weight: bold;">Tırnak Bakım Üniteleri</h3>
+                  <p>Profesyonel tırnak bakımı alanında uzmanlaşmış ekibimizle, sağlıklı ve güzel tırnaklara sahip olmanız için gerekli tüm hizmetleri sunuyoruz. Manikür, pedikür, tırnak güçlendirme ve bakım işlemleri ile cildinizi canlandırıyoruz.</p>
+                  <ul>
+                     <li><strong>Manikür Hizmeti:</strong> Ellerinizin bakımı ve sağlıklı tırnaklar için manikür hizmeti sunuyoruz. Özel masajlarla el bakımınızı tamamlıyoruz.</li>
+                     <li><strong>Pedikür Hizmeti:</strong> Ayaklarınıza özel bakım, tırnak kesimi ve ayak masajları ile rahatlatıcı bir deneyim.</li>
+                     <li><strong>Tırnak Güçlendirme:</strong> Zayıf tırnakları güçlendirmek için özel tedavi ve bakım yöntemleri uyguluyoruz.</li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="we_do slin" id="unit2">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <h3 style="font-weight: bold;">Nail Art Tasarım Stüdyosu</h3>
+                  <p>Tırnaklarınıza sanatsal dokunuşlar yaparak, kişisel stilinizi yansıtan tasarımlar oluşturuyoruz. Klasik ve modern tekniklerle, tırnaklarınızda benzersiz desenler, renk geçişleri ve süslemeler oluşturuyoruz.</p>
+                  <ul>
+                     <li><strong>El Yapımı Desenler:</strong> Profesyonel ekip tarafından yapılan el yapımı desenlerle tırnaklarınızı süslüyoruz.</li>
+                     <li><strong>Ombre ve Gradient Tasarımlar:</strong> Renk geçişleri ile şık ve zarif bir görünüm sağlıyoruz.</li>
+                     <li><strong>3D Nail Art:</strong> Tırnaklarınıza üç boyutlu figürler, taşlar veya süslemeler ekleyerek fark yaratıyoruz.</li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="we_do slin" id="unit3">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <h3 style="font-weight: bold;">Spa ve Manikür/Pedikür Hizmetleri</h3>
+                  <p>Hem tırnak bakımını hem de rahatlatıcı spa deneyimlerini bir arada sunuyoruz. Manikür ve pedikür hizmetlerimizi, dinlendirici bir spa bakımıyla taçlandırıyoruz. Cildinizi besleyerek rahatlamanızı sağlıyoruz.</p>
+                  <ul>
+                     <li><strong>Spa Manikür:</strong> El ve tırnak bakımının yanı sıra el masajı ve nemlendirici spa ürünleriyle bakımlarınızı yapıyoruz.</li>
+                     <li><strong>Spa Pedikür:</strong> Ayaklarınıza özel bakım, masaj ve spa ürünleriyle rahatlama sunuyoruz.</li>
+                     <li><strong>Nemlendirici Maskeler:</strong> Cildinize uygun nem maskeleri ile ellerinizi ve ayaklarınızı besliyoruz.</li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- Footer -->
+      <footer>
+         <div class="footer">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-12">
+                     <ul class="conta">
+                        <li><i class="fa fa-map-marker" aria-hidden="true"></i>Bağlık Mahallesi Çamlık sok. No:16 </li>
+                        <li><i class="fa fa-phone" aria-hidden="true"></i> Telefon: +05428747989</li>
+                        <li> <i class="fa fa-envelope" aria-hidden="true"></i><a href="#"> elegant@gmail.com</a></li>
+                     </ul>
+                  </div>
+                  <div class=" col-md-3 col-sm-6">
+                     <h3>Hakkımızda </h3>
+                     <p class="variat">Sanat ve güzelliği bir araya getiren Nail Art salonumuz, profosyonel ekibimizle birlikte en kaliteli hizmeti sunmayı planlıyoruz.</p>
+                  </div>
+                  <div class=" col-md-3 col-sm-6">
+                     <h3>Sosyal Medya  </h3>
+                     <p class="variat" >@eleganttouchnails  </p>
+                  </div>
+                  <div class="col-md-2 col-sm-6">
+                     <h3>Kısa Bağlantı</h3>
+                     <ul class="link_menu">
+                        <li class="active"><a href="index.html">Anasayfa</a></li>
+                        <li><a href="about.html"> Hakkımızda</a></li>
+                        <li><a href="we-do.html">Ürünlerimiz</a></li>
+                        <li><a href="pricing.html">Misyon-Vizyon Değerlerimiz</a></li>
+                        <li><a href="birimlerimiz.html">Birimlerimiz</a></li>
+                        <li><a href="contact.html">İletişim</a></li>
+                     </ul>
+                  </div>
+                  <div class="col-md-4 col-sm-6">
+                     <h3>Bültene Abone Ol</h3>
+                     <form class="bottom_form">
+                        <a class="right_btn" href="Javascript:void(0)"> <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                        <input class="enter" placeholder="E-postanızı girin" type="text" name="E-postanızı girin">
+                        <p >Korkmayın! :) Spam yapmıyoruz veya önemsiz şeyler göndermiyoruz. </p>
+                     </form>
+                  </div>
+               </div>
+            </div>
+            <div class="copyright">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-10 offset-md-1">
+                        <p>© 2019 All Rights Reserved. Design by  <a href="https://html.design/"> Free Html Templates</a></p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+
+      <!-- Scripts -->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+      <script>
+         function toggleUnit(unitId) {
+            document.querySelectorAll('.we_do').forEach(function (el) {
+                el.classList.remove('active');
+            });
+            document.getElementById(unitId).classList.add('active');
+         }
+      </script>
+   </body>
+</html>

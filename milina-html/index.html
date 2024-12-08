@@ -1,0 +1,686 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>elegant</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+   </head>
+   <!-- body -->
+   <body class="main-layout">
+      <!-- loader  -->
+      <div class="loader_bg">
+         <div class="loader"><img src="images/loading.gif" alt="#"/></div>
+      </div>
+      <!-- end loader -->
+      <!-- header -->
+      <header>
+         <!-- header inner -->
+         <div class="header">
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                     <div class="full">
+                        <div class="center-desk">
+                           <div class="logo">
+                              <a href="index.html"><img src="images/başlogo.jpg" alt="#" /></a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-7 col-lg-7 col-md-9 col-sm-9">
+                     <nav class="navigation navbar navbar-expand-md navbar-dark ">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarsExample04">
+                           <ul class="navbar-nav mr-auto">
+                              <li class="nav-item active">
+                                 <a class="nav-link" href="index.html">Anasayfa</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="about.html">Hakkımızda</a>
+                              </li>
+                              <li class="nav-item dropdown">
+                                 <a class="nav-link dropdown-toggle" href="we-do.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                     Ürünlerimiz
+                                 </a>
+                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                     <a class="dropdown-item" href="we-do.html">Profesyonel Nail Art Fırça Seti</a>
+                                     <a class="dropdown-item" href="we-do.html">Jel Oje Kitleri</a>
+                                     <a class="dropdown-item" href="we-do.html">Ombre Sünger Seti</a>
+                                     <a class="dropdown-item" href="we-do.html">El ve Ayak Bombası</a>
+                                 </div>
+                             </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="pricing.html">
+                                    <div>
+                                       <span>Misyon-Vizyon</span> <span>Değerlerimiz</span>
+                                    </div>
+                                 </a>
+                                 
+                              </li>
+                              <li class="nav-item dropdown">
+                                 <a class="nav-link dropdown-toggle" href="birimlerimiz.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Birimlerimiz
+                                 </a>
+                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="birimlerimiz.html" onclick="toggleUnit('unit1')">Tırnak Bakım Üniteleri</a>
+                                    <a class="dropdown-item" href="birimlerimiz.html" onclick="toggleUnit('unit2')">Nail Art Tasarım Stüdyosu</a>
+                                    <a class="dropdown-item" href="birimlerimiz.html" onclick="toggleUnit('unit3')">Spa ve Manikür/Pedikür Hizmetleri</a>
+                                 </div>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="contact.html">İletişim</a>
+                              </li>
+                           </ul>
+                        </div>
+                     </nav>
+                  </div>
+                  <div class="col-md-2">
+                     <ul class="social_icon">
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </header>
+      <!-- end header inner -->
+      <!-- end header -->
+      <!-- banner -->
+      <section class="banner_main">
+         <div id="myCarousel" class="carousel slide banner1" data-ride="carousel">
+            <ol class="carousel-indicators">
+               <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+               <li data-target="#myCarousel" data-slide-to="1"></li>
+               <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+               <div class="carousel-item active">
+                  <div class="container-fluid">
+                     <div class="carousel-caption relative">
+                        <div class="row d_flex">
+                           <div class="col-md-6">
+                              <img class="bann_img" src="images/yeni logo1.jpg" alt="#"/>
+                           </div>
+                           <div class="col-md-6">
+                              <span>01/03</span>
+                              <h1>Elegant Touch Nails</h1>
+                              <p>Tırnaklarınızda sanatı ve şıklığı buluşturuyor, her dokunuşta stilinizi yansıtıyoruz.</p>
+                              <a class="get_btn" href="Javascript:void(0)" role="button">Randevu</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="carousel-item">
+                  <div class="container-fluid">
+                     <div class="carousel-caption relative">
+                        <div class="row d_flex">
+                           <div class="col-md-6">
+                              <img class="bann_img" src="images/yeni logo2.jpg" alt="#"/>
+                           </div>
+                           <div class="col-md-6">
+                              <span>02/03</span>
+                              <h1>Elegant Touch Nails</h1>
+                              <p>Tırnaklarınızda sanatı ve şıklığı buluşturuyor, her dokunuşta stilinizi yansıtıyoruz.</p>
+                              <a class="get_btn" href="Javascript:void(0)" role="button">Randevu</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="carousel-item">
+                  <div class="container-fluid">
+                     <div class="carousel-caption relative">
+                        <div class="row d_flex">
+                           <div class="col-md-6">
+                              <img class="bann_img" src="images/yeni logo3.jpg" alt="#"/>
+                           </div>
+                           <div class="col-md-6">
+                              <span>03/03</span>
+                              <h1>Elegant Touch Nails</h1>
+                              <p>Tırnaklarınızda sanatı ve şıklığı buluşturuyor, her dokunuşta stilinizi yansıtıyoruz.</p>
+                              <a class="get_btn" href="Javascript:void(0)" role="button">Randevu</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+               <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+               <span class="sr-only">Previous</span>
+               </a>
+               <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+               <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+               <span class="sr-only">Next</span>
+               </a>
+            </div>
+         </div>
+      </section>
+      <!-- end banner -->
+      <!-- what we do  -->
+      <div class="we_do slin">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>Uygulamalarımız</h2>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-10 offset-lg-1 col-md-12">
+                  <div class="row">
+                     <div class="col-md-3 col-sm-6">
+                        <div class="we_box">
+                           <i><img src="images/tırnak1.jpg" alt="#"/></i>
+                           <h3>Nail Art</h3>
+                           <p> En iddialı olduğumuz işlemlerden biri nail art, çeşitli nail art ürünleriyle gerek el çizimi gerek yapıştırma yöntemleriyle aklınızdan geçen her desen ve tasarımın tırnağınıza yansıtılmasıdır.</p>
+                        </div>
+                     </div>
+                     <div class="col-md-3 col-sm-6">
+                        <div class="we_box">
+                           <i><img src="images/tırnak2.jpg" alt="#"/></i>
+                           <h3>Manikür & Pedikür</h3>
+                           <p>  Kalıcı oje üzerine yapılır ve yaklaşık üç hafta kadar kullanılır.</p>
+                        </div>
+                     </div>
+                     <div class="col-md-3 col-sm-6">
+                        <div class="we_box">
+                           <i><img src="images/tırnak3.jpg" alt="#"/></i>
+                           <h3>Protez Tırnak</h3>
+                           <p>Kendi tırnağınızın üzerine takma tırnağın yapıştırılıp şekil verilmesiyle gerçekleştirilen bir tırnak uzatma işlemidir. </p>
+                        </div>
+                     </div>
+                     <div class="col-md-3 col-sm-6">
+                        <div class="we_box">
+                           <i><img src="images/tırnak4.jpg" alt="#"/></i>
+                           <h3>El ve Ayak Spası</h3>
+                           <p>Eğer manikür ya da pedikür işlemi yapılacaksa işlemden sonra uygulanır. Nem bombası atılmış bir su içinde el ya da ayak yumuşatıldıktan sonra peeling ile ölü deriler atılır. </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end what we do  -->
+      <!-- about -->
+      <div class="about slin2">
+         <div class="container">
+            <div class="row d_flex">
+               <div class="col-md-6">
+                  <div class="titlepage">
+                     <h2>Hakkımızda</h2>
+                     <p>Daima yeni kalabilmek, en iyiyi başarmak ve benzersiz olmak öncelikli hedefimiz.
+
+                        Manikür ve pedikür temel bir kişisel bakım unsuru olarak bilinse de biz buna sanat gözüyle bakıyor ve bu doğrultuda hizmet vermeyi amaçlıyoruz. Bu amaçla çıktığımız yolumuzda hedefimiz markamızı dünya çapında bilinir kılmak ve en iyi şekilde temsil etmektir.</p>
+                     <a class="read_more" href="Javascript:void(0)"> Devam</a>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="about_img">
+                     <figure><img src="images/☾.jpg" alt="#"/></figure>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end about -->
+      <!-- our pricing -->
+      <div  class="pricing slin">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>Fiyatlandırma</h2>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-4">
+                  <div class="pricing_box">
+                     <div class="pricing_box_ti">
+                        <h3> <span></span>450<strong>₺</strong></h3>
+                     </div>
+                     <div class="our_pricing">
+                        <span>Genel</span>
+                        <p>Manikür & Pedikür Nail Art <br> <br> <br> </p>
+                     </div>
+                  </div>
+                  <a class="read_more mar_top" href="Javascript:void(0)"> Rezervasyon</a>
+               </div>
+               <div class="col-md-4">
+                  <div class="pricing_box">
+                     <div class="pricing_box_ti">
+                        <h3> <span></span>580<strong>₺</strong></h3>
+                     </div>
+                     <div class="our_pricing">
+                        <span>Standart</span>
+                        <p>Protez Tırnak Manikür & Pedikür Nail Art <br> <br> </p>
+                     </div>
+                  </div>
+                  <a class="read_more mar_top" href="Javascript:void(0)">Rezervasyon  </a>
+               </div>
+               <div class="col-md-4">
+                  <div class="pricing_box">
+                     <div class="pricing_box_ti">
+                        <h3> <span></span>750<strong>₺</strong></h3>
+                     </div>
+                     <div class="our_pricing">
+                        <span>Premium</span>
+                        <p>El ve Ayak Spası Protez Tırnak Manikür & Pedikür Nail Art</p>
+                     </div>
+                  </div>
+                  <a class="read_more mar_top" href="Javascript:void(0)"> Rezervasyon </a>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end our pricing -->
+      <!-- experts -->
+      <div  class="experts slin2">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>Uzmanlarımız</h2>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-8 offset-lg-2 col-md-12">
+                  <div class="row">
+                     <div class="col-md-4">
+                        <div id="exp" class="experts_box">
+                           <div class="experts_img">
+                              <figure><img src="images/eylem.jpg" alt="#"/></figure>
+                           </div>
+                           <div class="meet">
+                              <h3>Eylem</h3>
+                              <p>Nail Artist </p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div id="exp" class="experts_box">
+                           <div class="experts_img">
+                              <figure><img src="images/dila.jpg" alt="#"/></figure>
+                           </div>
+                           <div class="meet">
+                              <h3>Dila</h3>
+                              <p>Nail Artist</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div id="exp" class="experts_box">
+                           <div class="experts_img">
+                              <figure><img src="images/zehra.jpg" alt="#"/></figure>
+                           </div>
+                           <div class="meet">
+                              <h3>Zehra</h3>
+                              <p>Nail Artist</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-md-12">
+                        <a class="read_more mar_top exper" href="Javascript:void(0)">Devam</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end experts -->
+      <!--  contact -->
+      <div class="announcements">
+         <div class="container">
+             <div class="row">
+                 <div class="col-md-12 text-center">
+                     <div class="titlepage">
+                         <h2>Duyurular / Fırsatlar / Kampanyalar</h2>
+                     </div>
+                 </div>
+             </div>
+     <!-- Duyuru 1 -->
+<div class="row announcement_item">
+   <div class="col-md-8">
+       <div class="announcement_content">
+           <h4 style="font-weight: bold; color: #333;">Yeni Sezon Nail Art Koleksiyonu</h4>
+           <p>Yeni sezon tırnak tasarımlarımızla sizlerleyiz! Yeni koleksiyon hakkında detaylar için tıklayın.</p>
+           <p class="announcement_date"><strong>Tarih:</strong> 7 Kasım 2024</p>
+       </div>
+   </div>
+   <div class="col-md-4 text-right">
+       <a href="#" class="btn btn-primary read_more" data-toggle="modal" data-target="#announcementModal1">Devamını oku</a>
+   </div>
+</div>
+
+<div class="modal fade" id="announcementModal1" tabindex="-1" role="dialog" aria-labelledby="announcementModal1Label" aria-hidden="true">
+   <div class="modal-dialog" role="document">
+       <div class="modal-content">
+           <div class="modal-header">
+               <h5 class="modal-title" id="announcementModal1Label">Yeni Sezon Nail Art Koleksiyonu</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Kapat">
+                   <span aria-hidden="true">&times;</span>
+               </button>
+           </div>
+           <div class="modal-body">
+               <p><strong>Detaylar:</strong> Yeni sezon tırnak tasarımlarımızla sizlerleyiz!</p>
+               <p>
+                   <strong>PDF Dosyası:</strong>
+                   <a href="https://drive.google.com/file/d/1Z6Z74X1DxDm5JPorFmgMtRciFZtQw3GF/view" target="_blank">Yeni Sezon PDF</a>
+               </p>
+               <p>
+                   <strong>Word Dosyası:</strong>
+                   <a href="https://docs.google.com/document/d/1avjRCG_Itb36_WOLVYJRx8scJJtFQ1ZW/edit" target="_blank">Yeni Sezon Word</a>
+               </p>
+               <p>
+                  <strong>Resim:</strong>
+                   <!-- Resme tıklanabilir link ekledik -->
+                   <a href="https://drive.google.com/uc?export=view&id=13vIKxf7AvOXyhMlH5kRsetkpPXMKWkau" target="_blank">
+                       <img src="https://drive.google.com/uc?export=view&id=13vIKxf7AvOXyhMlH5kRsetkpPXMKWkau" alt="Yeni Sezon Koleksiyonu" style="width:100%; max-width:400px;">
+                   </a>
+               </p>
+           </div>
+       </div>
+   </div>
+</div>
+<!-- Duyuru 2 -->
+<div class="row announcement_item">
+   <div class="col-md-8">
+       <div class="announcement_content">
+           <h4 style="font-weight: bold; color: #333;">Yaz Kampanyası Başladı!</h4>
+           <p>%20 indirim fırsatıyla yaz kampanyamız başladı! Detaylar için tıklayın.</p>
+           <p class="announcement_date"><strong>Tarih:</strong> 1 Temmuz 2024</p>
+       </div>
+   </div>
+   <div class="col-md-4 text-right">
+       <a href="#" class="btn btn-primary read_more" data-toggle="modal" data-target="#announcementModal2">Devamını oku</a>
+   </div>
+</div>
+
+<div class="modal fade" id="announcementModal2" tabindex="-1" role="dialog" aria-labelledby="announcementModal2Label" aria-hidden="true">
+   <div class="modal-dialog" role="document">
+       <div class="modal-content">
+           <div class="modal-header">
+               <h5 class="modal-title" id="announcementModal2Label">Yaz Kampanyası Başladı!</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Kapat">
+                   <span aria-hidden="true">&times;</span>
+               </button>
+           </div>
+           <div class="modal-body">
+               <p><strong>Detaylar:</strong> Yaz kampanyamızda %20 indirim fırsatı sizleri bekliyor!</p>
+               <p>
+                   <strong>PDF Dosyası:</strong>
+                   <a href="https://drive.google.com/file/d/1aksNJ-2q_iRQjUxdmO9W29ea4CMzhWzq/view?usp=drive_link" target="_blank">Yaz Kampanyası PDF</a>
+               </p>
+               <p>
+                   <strong>Word Dosyası:</strong>
+                   <a href="https://docs.google.com/document/d/1DyV_7_4Y47vfy2bsCQd0Y9Q4HH9UKrWP/edit?usp=drive_link&ouid=101712736870123859917&rtpof=true&sd=true" target="_blank">Yaz Kampanyası Word</a>
+               </p>
+               <p>
+                  <strong>Resim:</strong>
+<!-- Resme tıklanabilir link ekledik -->
+<a href="https://drive.google.com/uc?export=view&id=1OxTvKzR6A9tMuH0XFQWEjwY37-alL4B2" target="_blank">
+    <img src="https://drive.google.com/uc?export=view&id=1OxTvKzR6A9tMuH0XFQWEjwY37-alL4B2" alt="Yaz Kampanyası" style="width:100%; max-width:400px;">
+</a>
+
+
+                  
+               </p>
+           </div>
+       </div>
+   </div>
+</div>
+<!-- Duyuru 3 -->
+<div class="row announcement_item">
+    <div class="col-md-8">
+        <div class="announcement_content">
+            <h4 style="font-weight: bold; color: #333;">Yeni Ürünler Mağazamızda!</h4>
+            <p>Yeni tırnak bakım ürünlerimiz mağazamızda yerini aldı. Şimdi keşfedin!</p>
+            <p class="announcement_date"><strong>Tarih:</strong> 15 Haziran 2024</p>
+        </div>
+    </div>
+    <div class="col-md-4 text-right">
+        <a href="#" class="btn btn-primary read_more" data-toggle="modal" data-target="#announcementModal3">Devamını oku</a>
+    </div>
+</div>
+
+<div class="modal fade" id="announcementModal3" tabindex="-1" role="dialog" aria-labelledby="announcementModal3Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="announcementModal3Label">Yeni Ürünler Mağazamızda!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Kapat">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Detaylar:</strong> Yeni tırnak bakım ürünlerimiz mağazamızda yerini aldı. Şimdi keşfedin!</p>
+                <p>
+                    <strong>PDF Dosyası:</strong>
+                    <a href="https://drive.google.com/file/d/1KiHvMxpp2YpfePWxzGMea2sSb8bwxvIv/view?usp=drive_link" target="_blank">Yeni Ürünler PDF</a>
+                </p>
+                <p>
+                    <strong>Word Dosyası:</strong>
+                    <a href="https://docs.google.com/document/d/16RMUMQQWf07a3ls9HJusGwxQkuyAWSX6/edit?usp=drive_link&ouid=101712736870123859917&rtpof=true&sd=true" target="_blank">Yeni Ürünler Word</a>
+                </p>
+                <p>
+                  <strong>Resim:</strong>
+                  <!-- Tıklanabilir link -->
+                  <!-- Resme tıklanabilir link ekledik -->
+<a href="https://drive.google.com/file/d/1t_BGqsGA5_juXOC8DBhk8LCpE4FAX6Am/view?usp=drive_link" target="_blank">
+   <img src="https://drive.google.com/uc?export=view&id=1t_BGqsGA5_juXOC8DBhk8LCpE4FAX6Am" alt="Yeni Ürünler Görseli" style="width:100%; max-width:400px;">
+</a>
+
+                  
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Duyuru 4 -->
+<div class="row announcement_item">
+    <div class="col-md-8">
+        <div class="announcement_content">
+            <h4 style="font-weight: bold; color: #333;">Sezon Sonu İndirimi</h4>
+            <p>Sezon sonu %30 indirim fırsatını kaçırmayın! Sınırlı süreli kampanya!</p>
+            <p class="announcement_date"><strong>Tarih:</strong> 10 Mayıs 2024</p>
+        </div>
+    </div>
+    <div class="col-md-4 text-right">
+        <a href="#" class="btn btn-primary read_more" data-toggle="modal" data-target="#announcementModal4">Devamını oku</a>
+    </div>
+</div>
+
+<div class="modal fade" id="announcementModal4" tabindex="-1" role="dialog" aria-labelledby="announcementModal4Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="announcementModal4Label">Sezon Sonu İndirimi</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Kapat">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Detaylar:</strong> Sezon sonu %30 indirim fırsatını kaçırmayın! Sınırlı süreli kampanya!</p>
+                <p>
+                    <strong>PDF Dosyası:</strong>
+                    <a href="https://drive.google.com/file/d/17tj3JFMj7-UA7SjgTbxB_45nykKWo9AB/view?usp=drive_link" target="_blank">Sezon Sonu PDF</a>
+                </p>
+                <p>
+                    <strong>Word Dosyası:</strong>
+                    <a href="https://docs.google.com/document/d/1o5pfeIcNw8qvsDP6mgkhxKMFkjSP6f-8/edit?usp=drive_link&ouid=101712736870123859917&rtpof=true&sd=true" target="_blank">Sezon Sonu Word</a>
+                </p>
+                <p>
+                    <strong>Resim:</strong>
+                    <a href="https://drive.google.com/file/d/1bkvwmeuaNHebWuUQqmmd4ywLOhizacWv/view?usp=drive_link" target="_blank">
+                     <img src="https://drive.google.com/uc?export=view&id=1bkvwmeuaNHebWuUQqmmd4ywLOhizacWv" alt="Sezon Sonu İndirimi" style="width:100%; max-width:400px;">
+                 </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Duyuru 5 -->
+<div class="row announcement_item">
+    <div class="col-md-8">
+        <div class="announcement_content">
+            <h4 style="font-weight: bold; color: #333;">Özel Üye İndirimi</h4>
+            <p>Üyelerimize özel %15 indirim fırsatından yararlanabilirsiniz! Detaylar için tıklayın.</p>
+            <p class="announcement_date"><strong>Tarih:</strong> 5 Nisan 2024</p>
+        </div>
+    </div>
+    <div class="col-md-4 text-right">
+        <a href="#" class="btn btn-primary read_more" data-toggle="modal" data-target="#announcementModal5">Devamını oku</a>
+    </div>
+</div>
+
+<div class="modal fade" id="announcementModal5" tabindex="-1" role="dialog" aria-labelledby="announcementModal5Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="announcementModal5Label">Özel Üye İndirimi</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Kapat">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Detaylar:</strong> Üyelerimize özel %15 indirim fırsatından yararlanabilirsiniz!</p>
+                <p>
+                    <strong>PDF Dosyası:</strong>
+                    <a href="https://drive.google.com/file/d/1GTK-WEtJUoDkULuZ_PDbiQtR7IIn7goj/view?usp=drive_link" target="_blank">Üye İndirimi PDF</a>
+                </p>
+                <p>
+                    <strong>Word Dosyası:</strong>
+                    <a href="https://docs.google.com/document/d/1wz1yxHZj_Q3zRAArvX2tNbS14X_UM_BY/edit?usp=drive_link&ouid=101712736870123859917&rtpof=true&sd=true" target="_blank">Üye İndirimi Word</a>
+                </p>
+                <p>
+                    <strong>Resim:</strong>
+                    <!-- Resme tıklanabilir link ekledik -->
+<a href="https://drive.google.com/file/d/1JFJwMBfj8Mu2aX5VMUora3Pjhe8sy-z-/view?usp=drive_link" target="_blank">
+   <img src="https://drive.google.com/uc?export=view&id=1JFJwMBfj8Mu2aX5VMUora3Pjhe8sy-z-" alt="Özel Üye İndirimi" style="width:100%; max-width:400px;">
+</a>
+
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+             
+     
+     <!-- Repeat similar modals for the other announcements (announcementModal2, announcementModal3, etc.) -->
+     
+     
+         
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="map_main">
+                     <div class="map-responsive">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2998.4881429782254!2d31.42205257587276!3d41.27647947131419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x409c44b5833a742b%3A0xf93e117d8598abda!2zTcO8ZnTDvCwgw4dhbWzEsWsgU2suIE5vOjE2LCA2NzMwMCBFcmXEn2xpL1pvbmd1bGRhaywgVMO8cmtpeWU!5e0!3m2!1str!2sus!4v1730456262458!5m2!1str!2sus" width="980" height="320" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end contact -->
+      <!--  footer -->
+      <footer>
+         <div class="footer">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-12">
+                     <ul class="conta">
+                        <li><i class="fa fa-map-marker" aria-hidden="true"></i>Bağlık Mahallesi Çamlık sok. No:16 </li>
+                        <li><i class="fa fa-phone" aria-hidden="true"></i> Telefon: +05428747989</li>
+                        <li> <i class="fa fa-envelope" aria-hidden="true"></i><a href="#"> elegant@gmail.com</a></li>
+                     </ul>
+                  </div>
+                  <div class=" col-md-3 col-sm-6">
+                     <h3>Hakkımızda </h3>
+                     <p class="variat">Sanat ve güzelliği bir araya getiren Nail Art salonumuz, profosyonel ekibimizle birlikte en kaliteli hizmeti sunmayı planlıyoruz.</p>
+                  </div>
+                  <div class=" col-md-3 col-sm-6">
+                     <h3>Sosyal Medya  </h3>
+                     <p class="variat" >@eleganttouchnails  </p>
+                  </div>
+                  <div class="col-md-2 col-sm-6">
+                     <h3>Kısa Bağlantı</h3>
+                     <ul class="link_menu">
+                        <li class="active"><a href="index.html">Anasayfa</a></li>
+                        <li><a href="about.html"> Hakkımızda</a></li>
+                        <li><a href="we-do.html">Ürünlerimiz</a></li>
+                        <li><a href="pricing.html">Misyon-Vizyon Değerlerimiz</a></li>
+                        <li><a href="birimlerimiz.html">Birimlerimiz</a></li>
+                        <li><a href="contact.html">İletişim</a></li>
+                     </ul>
+                  </div>
+                  <div class="col-md-4 col-sm-6">
+                     <h3>Bültene Abone Ol</h3>
+                     <form class="bottom_form">
+                        <a class="right_btn" href="Javascript:void(0)"> <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                        <input class="enter" placeholder="E-postanızı girin" type="text" name="E-postanızı girin">
+                        <p >Korkmayın! :) Spam yapmıyoruz veya önemsiz şeyler göndermiyoruz. </p>
+                     </form>
+                  </div>
+               </div>
+            </div>
+            <div class="copyright">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-10 offset-md-1">
+                        <p>© 2019 All Rights Reserved. Design by  <a href="https://html.design/"> Free Html Templates</a></p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- end footer -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <!-- sidebar -->
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+   </body>
+</html>
+

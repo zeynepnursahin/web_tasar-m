@@ -1,0 +1,238 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <title>Milina</title>
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/responsive.css">
+      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+      <style>
+         .we_do {
+            display: none;
+         }
+         .active {
+            display: block;
+         }
+         .product-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+         }
+         .product-content img {
+            max-width: 30%; /* Resmin genişliğini %30 yaparak küçültüyoruz */
+            height: auto; /* Yüksekliği orantılı tutuyoruz */
+            margin-left: 20px; /* Resmin açıklamadan uzaklık */
+         }
+         .product-description {
+            max-width: 65%; /* Açıklama kısmının genişliği */
+         }
+      </style>
+   </head>
+   <body class="main-layout">
+      <header>
+         <div class="header">
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                     <div class="full">
+                        <div class="center-desk">
+                           <div class="logo">
+                              <a href="index.html"><img src="images/başlogo.jpg" alt="#" /></a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-7 col-lg-7 col-md-9 col-sm-9">
+                     <nav class="navigation navbar navbar-expand-md navbar-dark">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                           <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarsExample04">
+                           <ul class="navbar-nav mr-auto">
+                              <li class="nav-item">
+                                 <a class="nav-link" href="index.html">Anasayfa</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="about.html">Hakkımızda</a>
+                              </li>
+                              <li class="nav-item dropdown">
+                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Ürünlerimiz
+                                 </a>
+                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#" onclick="toggleProduct('product1')">Profosyonel Nail Art Fırça Seti</a>
+                                    <a class="dropdown-item" href="#" onclick="toggleProduct('product2')">Jel Oje Kitleri</a>
+                                    <a class="dropdown-item" href="#" onclick="toggleProduct('product3')">Ombre Sünger Seti</a>
+                                    <a class="dropdown-item" href="#" onclick="toggleProduct('product4')">El ve Ayak Bombası</a>
+                                 </div>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="pricing.html">Misyon-Vizyon&Değerlerimiz</a>
+                              </li>
+                              <li class="nav-item dropdown">
+                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Birimlerimiz
+                                 </a>
+                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">Tırnak Bakım Üniteleri</a>
+                                    <a class="dropdown-item" href="#">Nail Art Tasarım Stüdyosu</a>
+                                    <a class="dropdown-item" href="#">Spa ve Manikür/Pedikür Hizmetleri</a>
+                                 </div>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="contact.html">İletişim</a>
+                              </li>
+                           </ul>
+                        </div>
+                     </nav>
+                  </div>
+                  <div class="col-md-2">
+                     <ul class="social_icon">
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </header>
+
+      <!-- Ürünlerimiz içerik kısımları -->
+      <div class="we_do slin active" id="product1">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12 product-content">
+                  <div class="product-description">
+                     <h3 style="font-weight: bold;">Profosyonel Nail Art Fırça Seti</h3>
+                     <p>İnce detyalardan geniş yüzey boyamaya kadar çeşitli nail art teknikleri için tasarlanmış fırça seti.Set içinde ince çizgiler için çizim fırçaları, noktalama fırçaları ve özel desenler için detay fırçaları bulunur.</p>
+                  </div>
+                  <img src="images/ürün1.jpg" alt="Ürün 1" />
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="we_do slin" id="product2">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12 product-content">
+                  <div class="product-description">
+                     <h3 style="font-weight: bold;">Jel Oje Kitleri</h3>
+                     <p>Parlak ve kalıcı görnünüm için tasarlanan, UV/LED lamba ile kürleme yapılabilen jel ojeler.Birkaç gün boyunca dayanıklılığını koruyan bu ojeler, profosyonel nail art tasarımlarını kolayca yaratmanızı sağlar.</p>
+                  </div>
+                  <img src="images/ürün2.jpg" alt="Ürün 2" />
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="we_do slin" id="product3">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12 product-content">
+                  <div class="product-description">
+                     <h3 style="font-weight: bold;">Ombre Sünger Seti</h3>
+                     <p>Ombre veya degrade tırnak tasarımlarını kolayca yapmanızı sağlayan özel sünger seti.Renk geçişleri oluşturmak için tasarlanmış farklı yoğunluklardaki süngerler, yaratıcı tırnak tasarımlarına imkan tanır.</p>
+                  </div>
+                  <img src="images/ürün3.jpg" alt="Ürün 3" />
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="we_do slin" id="product4">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12 product-content">
+                  <div class="product-description">
+                     <h3 style="font-weight: bold;">El ve Ayak Bombası</h3>
+
+                     <p>El ve ayaklar için özel olarak formüle edilmiş bu bakım bombaları, spa keyfini evinize getirir.Suya atıldığında köpürerek çözülür ve cildi nemlendirirken hoş kokusuyla rahatlatır.Manikür ve pedikür öncesi veya sonrası kullanıma uygundur.</p>
+                  </div>
+                  <img src="images/ürün4.jpg" alt="Ürün 4" />
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- Footer -->
+      <footer>
+         <div class="footer">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-12">
+                     <ul class="conta">
+                        <li><i class="fa fa-map-marker" aria-hidden="true"></i>Bağlık Mahallesi Çamlık sok. No:16 </li>
+                        <li><i class="fa fa-phone" aria-hidden="true"></i> Telefon: +05428747989</li>
+                        <li> <i class="fa fa-envelope" aria-hidden="true"></i><a href="#"> elegant@gmail.com</a></li>
+                     </ul>
+                  </div>
+                  <div class=" col-md-3 col-sm-6">
+                     <h3>Hakkımızda </h3>
+                     <p class="variat">Sanat ve güzelliği bir araya getiren Nail Art salonumuz, profosyonel ekibimizle birlikte en kaliteli hizmeti sunmayı planlıyoruz.</p>
+                  </div>
+                  <div class=" col-md-3 col-sm-6">
+                     <h3>Sosyal Medya  </h3>
+                     <p class="variat" >@eleganttouchnails  </p>
+                  </div>
+                  <div class="col-md-2 col-sm-6">
+                     <h3>Kısa Bağlantı</h3>
+                     <ul class="link_menu">
+                        <li class="active"><a href="index.html">Anasayfa</a></li>
+                        <li><a href="about.html"> Hakkımızda</a></li>
+                        <li><a href="we-do.html">Ürünlerimiz</a></li>
+                        <li><a href="pricing.html">Misyon-Vizyon Değerlerimiz</a></li>
+                        <li><a href="birimlerimiz.html">Birimlerimiz</a></li>
+                        <li><a href="contact.html">İletişim</a></li>
+                     </ul>
+                  </div>
+                  <div class="col-md-4 col-sm-6">
+                     <h3>Bültene Abone Ol</h3>
+                     <form class="bottom_form">
+                        <a class="right_btn" href="Javascript:void(0)"> <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                        <input class="enter" placeholder="E-postanızı girin" type="text" name="E-postanızı girin">
+                        <p >Korkmayın! :) Spam yapmıyoruz veya önemsiz şeyler göndermiyoruz. </p>
+                     </form>
+                  </div>
+               </div>
+            </div>
+            <div class="copyright">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-10 offset-md-1">
+                        <p>© 2019 All Rights Reserved. Design by  <a href="https://html.design/"> Free Html Templates</a></p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+
+      <!-- Scripts -->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+      <script>
+         function toggleProduct(productId) {
+            document.querySelectorAll('.we_do').forEach(function (el) {
+                el.classList.remove('active');
+            });
+            document.getElementById(productId).classList.add('active');
+         }
+      </script>
+   </body>
+</html>
+
+
+
