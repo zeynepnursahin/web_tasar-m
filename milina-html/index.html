@@ -602,6 +602,194 @@
     </div>
 </div>
 
+<div class="container-fluid">
+   <div class="row">
+      <div class="col-md-12">
+         <!-- Başlık Ekleme -->
+         <div class="section-title">
+            <h1>Canlı Satış ve Ziyaretçi Takibi</h1>
+         </div>
+
+         <div class="counter-section">
+            <div class="counter-wrapper">
+               <!-- Toplam Ziyaretçi Sayacı -->
+               <div class="counter-box">
+                  <div class="counter-title">Toplam Ziyaretçi</div>
+                  <div class="counter-value" id="visitorCount">0</div>
+               </div>
+               <!-- Günlük Ziyaretçi Sayacı -->
+               <div class="counter-box">
+                  <div class="counter-title">Günlük Ziyaretçi</div>
+                  <div class="counter-value" id="dailyVisitorCount">0</div>
+               </div>
+               <!-- Mevcut Stok Sayacı -->
+               <div class="counter-box">
+                  <div class="counter-title">Mevcut Stok</div>
+                  <div class="counter-value" id="productStock">0</div>
+               </div>
+               <!-- Satış Sayacı -->
+               <div class="counter-box">
+                  <div class="counter-title">Satış Bitiş Zamanı</div>
+                  <div class="counter-value timer" id="saleTimer">
+                     <span id="saleDays">00</span>:<span id="saleHours">00</span>:<span id="saleMinutes">00</span>:<span id="saleSeconds">00</span>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+<!-- CSS -->
+<style>
+   .section-title {
+      text-align: center;
+      margin-bottom: 30px;
+   }
+
+   .section-title h1 {
+      font-size: 36px;
+      color: #333;
+      font-weight: bold;
+      margin: 0;
+   }
+
+   .counter-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 30px;
+   }
+
+   .counter-wrapper {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      margin-bottom: 20px;
+   }
+
+   .counter-box {
+      background-color: #f5f5f5;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      width: 20%;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+   }
+
+   .counter-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+   }
+
+   .counter-value {
+      font-size: 30px;
+      font-weight: bold;
+      color: #000; /* Siyah renk */
+      margin-top: 10px;
+   }
+
+   .timer {
+      font-size: 24px;
+      font-weight: bold;
+      color: #d9534f;
+   }
+</style>
+
+<!-- JavaScript -->
+<script>
+   let visitorCount = 0;
+   let dailyVisitorCount = 0;
+   let productStock = 0;
+
+   // Toplam Ziyaretçi Sayısı
+   function increaseVisitorCount() {
+       let countElement = document.getElementById('visitorCount');
+       let target = 2000; // Hedef ziyaretçi sayısı
+       let interval = setInterval(function() {
+           if (visitorCount < target) {
+               visitorCount++;
+               countElement.textContent = visitorCount;
+           } else {
+               clearInterval(interval);
+           }
+       }, 10); // Artış hızı (10ms)
+   }
+
+   // Günlük Ziyaretçi Sayısı
+   function increaseDailyVisitorCount() {
+       let countElement = document.getElementById('dailyVisitorCount');
+       let target = 500; // Günlük hedef ziyaretçi sayısı
+       let interval = setInterval(function() {
+           if (dailyVisitorCount < target) {
+               dailyVisitorCount++;
+               countElement.textContent = dailyVisitorCount;
+           } else {
+               clearInterval(interval);
+           }
+       }, 20); // Artış hızı (20ms)
+   }
+
+   // Mevcut Stok Sayısı
+   function increaseStock() {
+       let countElement = document.getElementById('productStock');
+       let target = 100; // Hedef stok seviyesini belirle
+       let interval = setInterval(function() {
+           if (productStock < target) {
+               productStock++;
+               countElement.textContent = productStock;
+           } else {
+               clearInterval(interval);
+           }
+       }, 30); // Artış hızı (30ms)
+   }
+
+   // Satış Sayacı
+   function startSaleCountdown(targetDate) {
+       const daysElement = document.getElementById('saleDays');
+       const hoursElement = document.getElementById('saleHours');
+       const minutesElement = document.getElementById('saleMinutes');
+       const secondsElement = document.getElementById('saleSeconds');
+
+       function updateCountdown() {
+           const now = new Date();
+           const timeLeft = targetDate - now;
+
+           if (timeLeft <= 0) {
+               clearInterval(interval);
+               document.getElementById('saleTimer').textContent = "Satış Bitti!";
+               return;
+           }
+
+           const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+           const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+           const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+           const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+           daysElement.textContent = days < 10 ? "0" + days : days;
+           hoursElement.textContent = hours < 10 ? "0" + hours : hours;
+           minutesElement.textContent = minutes < 10 ? "0" + minutes : minutes;
+           secondsElement.textContent = seconds < 10 ? "0" + seconds : seconds;
+       }
+
+       updateCountdown();
+       const interval = setInterval(updateCountdown, 1000);
+   }
+
+   // Satış sayacını başlat
+   const saleEndDate = new Date("Dec 25, 2024 23:59:59").getTime();
+   startSaleCountdown(saleEndDate);
+
+   // Sayfa yüklendiğinde sayaçları başlat
+   window.onload = function() {
+       increaseVisitorCount();
+       increaseDailyVisitorCount();
+       increaseStock();
+   }
+</script>
+
              
      
      <!-- Repeat similar modals for the other announcements (announcementModal2, announcementModal3, etc.) -->
@@ -613,7 +801,7 @@
                <div class="col-md-12">
                   <div class="map_main">
                      <div class="map-responsive">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2998.4881429782254!2d31.42205257587276!3d41.27647947131419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x409c44b5833a742b%3A0xf93e117d8598abda!2zTcO8ZnTDvCwgw4dhbWzEsWsgU2suIE5vOjE2LCA2NzMwMCBFcmXEn2xpL1pvbmd1bGRhaywgVMO8cmtpeWU!5e0!3m2!1str!2sus!4v1730456262458!5m2!1str!2sus" width="980" height="320" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2998.4881429782254!2d31.42205257587276!3d41.27647947131419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x409c44b5833a742b%3A0xf93e117d8598abda!2zTcO8ZnTDvCwgw4dhbWzEsWsgU2suIE5vOjE2LCA2NzMwMCBFcmXEn2xpL1pvbmd1bGRhaywgVMO8cmtpeWU!5e0!3m2!1str!2sus!4v1730456262458!5m2!1str!2sus" width="1100" height="320" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                      </div>
                   </div>
                </div>
