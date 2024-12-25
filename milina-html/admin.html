@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Paneli - Elegant Touch Nails</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         /* CSS Başlangıcı */
         body {
@@ -34,11 +35,11 @@
             border-right: 3px solid #2c3e50; /* Lacivert sınır */
         }
         .sidebar a {
-            display: block;
+            display: block;  /* Menüyü blok yaparak alt alta sıralıyoruz */
             color: #2c3e50; /* Lacivert yazı rengi */
             text-decoration: none;
             padding: 12px 20px;
-            margin: 10px 0;
+            margin: 10px 0;  /* Menü elemanları arasına boşluk ekliyoruz */
             border-radius: 5px;
             transition: background 0.3s, transform 0.2s ease-in-out;
         }
@@ -48,7 +49,7 @@
             transform: translateX(10px);
         }
         .content {
-            margin-left: 260px;
+            margin-left: 260px; /* Sidebar'ın yanındaki boşluğu bırakıyoruz */
             padding: 30px;
         }
         .card {
@@ -83,6 +84,20 @@
             color: white;
             transform: translateY(-2px);
         }
+
+        /* Grafiklerin boyutları küçültüldü ve yan yana hizalandı */
+        #charts-section {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        #barChart, #pieChart {
+            width: 48%; /* Grafiklerin her biri %48 genişliğinde olacak */
+            height: 250px !important;
+            margin: auto;
+        }
+
         /* CSS Bitişi */
     </style>
 </head>
@@ -91,53 +106,225 @@
         Admin Paneli - Elegant Touch Nails
     </header>
     <div class="sidebar">
-        <a href="#home">Anasayfa</a>
-        <a href="#about">Hakkımızda</a>
-        <a href="#products">Ürünlerimiz</a>
-        <a href="#mission-vision-values">Misyon-Vizyon Değerlerimiz</a>
-        <a href="#units">Birimlerimiz</a>
-        <a href="#contact">İletişim</a>
-        <a href="#logout">Çıkış Yap</a>
+        <a href="#home" onclick="showSection('home')">Anasayfa</a>
+        <a href="#about" onclick="showSection('about')">Hakkımızda</a>
+        <a href="#products" onclick="showSection('products')">Ürünlerimiz</a>
+        <a href="#pricing" onclick="showSection('pricing')">Misyon-Vizyon&Değerlerimiz</a>
+        <a href="#units" onclick="showSection('units')">Birimlerimiz</a>
+        <a href="#contact" onclick="showSection('contact')">İletişim</a>
     </div>
     <div class="content">
         <div id="home" class="card">
             <h3>Anasayfa</h3>
-            <button class="button">Anasayfa Düzenle</button>
+            <button class="button" onclick="alert('Anasayfa düzenle!')">Anasayfa Düzenle</button>
         </div>
         <div id="about" class="card">
             <h3>Hakkımızda</h3>
-            <button class="button">Hakkımızda Sayfasını Düzenle</button>
+            <button class="button" onclick="alert('Hakkımızda düzenle!')">Hakkımızda Sayfasını Düzenle</button>
         </div>
         <div id="products" class="card">
             <h3>Ürünlerimiz</h3>
-            <button class="button">Yeni Ürün Ekle</button>
+            <button class="button" onclick="openProductForm()">Yeni Ürün Ekle</button>
+            <div id="product-list"></div>
         </div>
-        <div id="mission-vision-values" class="card">
-            <h3>Misyon-Vizyon Değerlerimiz</h3>
-            <button class="button">Misyon ve Vizyonu Düzenle</button>
+        <div id="pricing" class="card">
+            <h3>Misyon-Vizyon&Değerlerimiz</h3>
+            <button class="button" onclick="alert('Misyon-Vizyon&Değerlerimiz düzenle!')">Misyon-Vizyon&Değerlerimiz Sayfasını Düzenle</button>
         </div>
         <div id="units" class="card">
             <h3>Birimlerimiz</h3>
-            <button class="button">Yeni Birim Ekle</button>
+            <button class="button" onclick="openUnitForm()">Yeni Birim Ekle</button>
+            <div id="unit-list"></div>
         </div>
         <div id="contact" class="card">
             <h3>İletişim</h3>
-            <button class="button">İletişim Bilgilerini Düzenle</button>
+            <button class="button" onclick="alert('İletişim düzenle!')">İletişim Bilgilerini Düzenle</button>
+        </div>
+
+        <!-- Grafik Alanları -->
+        <div class="card" id="charts-section">
+            <h3>İstatistikler</h3>
+            <canvas id="barChart"></canvas>
+            <canvas id="pieChart"></canvas>
         </div>
     </div>
-    <script>
-        // JavaScript Başlangıcı
-        document.addEventListener("DOMContentLoaded", () => {
-            const buttons = document.querySelectorAll(".button");
 
-            buttons.forEach(button => {
-                button.addEventListener("click", (event) => {
-                    const section = event.target.closest(".card").id;
-                    alert(`${section} yönetimi açıldı!`);
-                });
+    <script>
+        // Veriler yerel depolama (localStorage) ile saklanacak
+        let products = JSON.parse(localStorage.getItem("products")) || [];
+        let units = JSON.parse(localStorage.getItem("units")) || [];
+
+        // Ürün ekleme formu
+        function openProductForm() {
+            let productName = prompt("Ürün Adı:");
+            let productPrice = prompt("Ürün Fiyatı:");
+            let productDescription = prompt("Ürün Açıklaması:");
+            
+            if (productName && productPrice && productDescription) {
+                let product = {
+                    id: Date.now(),
+                    name: productName,
+                    price: productPrice,
+                    description: productDescription
+                };
+                products.push(product);
+                localStorage.setItem("products", JSON.stringify(products));
+                renderProducts();
+            }
+        }
+
+        // Birim ekleme formu
+        function openUnitForm() {
+            let unitName = prompt("Birim Adı:");
+            let unitDescription = prompt("Birim Açıklaması:");
+            
+            if (unitName && unitDescription) {
+                let unit = {
+                    id: Date.now(),
+                    name: unitName,
+                    description: unitDescription
+                };
+                units.push(unit);
+                localStorage.setItem("units", JSON.stringify(units));
+                renderUnits();
+            }
+        }
+
+        // Ürünleri listeleme
+        function renderProducts() {
+            let productList = document.getElementById("product-list");
+            productList.innerHTML = "";
+            products.forEach(product => {
+                let productDiv = document.createElement("div");
+                productDiv.innerHTML = `
+                    <p><strong>${product.name}</strong> - ${product.price} TL</p>
+                    <p>${product.description}</p>
+                    <button onclick="deleteProduct(${product.id})">Sil</button>
+                    <button onclick="editProduct(${product.id})">Düzenle</button>
+                `;
+                productList.appendChild(productDiv);
             });
-        });
-        // JavaScript Bitişi
+        }
+
+        // Birimleri listeleme
+        function renderUnits() {
+            let unitList = document.getElementById("unit-list");
+            unitList.innerHTML = "";
+            units.forEach(unit => {
+                let unitDiv = document.createElement("div");
+                unitDiv.innerHTML = `
+                    <p><strong>${unit.name}</strong></p>
+                    <p>${unit.description}</p>
+                    <button onclick="deleteUnit(${unit.id})">Sil</button>
+                    <button onclick="editUnit(${unit.id})">Düzenle</button>
+                `;
+                unitList.appendChild(unitDiv);
+            });
+        }
+
+        // Ürün silme
+        function deleteProduct(productId) {
+            products = products.filter(product => product.id !== productId);
+            localStorage.setItem("products", JSON.stringify(products));
+            renderProducts();
+        }
+
+        // Ürün düzenleme
+        function editProduct(productId) {
+            let product = products.find(product => product.id === productId);
+            let newName = prompt("Yeni Ürün Adı:", product.name);
+            let newPrice = prompt("Yeni Ürün Fiyatı:", product.price);
+            let newDescription = prompt("Yeni Ürün Açıklaması:", product.description);
+            
+            if (newName && newPrice && newDescription) {
+                product.name = newName;
+                product.price = newPrice;
+                product.description = newDescription;
+                localStorage.setItem("products", JSON.stringify(products));
+                renderProducts();
+            }
+        }
+
+        // Birim silme
+        function deleteUnit(unitId) {
+            units = units.filter(unit => unit.id !== unitId);
+            localStorage.setItem("units", JSON.stringify(units));
+            renderUnits();
+        }
+
+        // Birim düzenleme
+        function editUnit(unitId) {
+            let unit = units.find(unit => unit.id === unitId);
+            let newName = prompt("Yeni Birim Adı:", unit.name);
+            let newDescription = prompt("Yeni Birim Açıklaması:", unit.description);
+            
+            if (newName && newDescription) {
+                unit.name = newName;
+                unit.description = newDescription;
+                localStorage.setItem("units", JSON.stringify(units));
+                renderUnits();
+            }
+        }
+
+        // Grafiklerin render edilmesi
+        function renderCharts() {
+            const barCtx = document.getElementById("barChart").getContext("2d");
+            new Chart(barCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Profosyonel Nail Art Fırça Seti', 'Jel Oje Kitleri', 'Ombre Sünger Seti'],
+                    datasets: [{
+                        label: 'Ürün Satışları',
+                        data: [10, 20, 30],
+                        backgroundColor: '#a9c8f0',
+                        borderColor: '#2c3e50',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            const pieCtx = document.getElementById("pieChart").getContext("2d");
+            new Chart(pieCtx, {
+                type: 'pie',
+                data: {
+                    labels: ['Tırnak Bakım Üniteleri', 'Nail Art Tasarım Stüdyosu', 'Spa ve Manikür/Pedikür Hizmetleri'],
+                    datasets: [{
+                        label: 'Birim Dağılımı',
+                        data: [15, 25, 60],
+                        backgroundColor: ['#ff5733', '#33ff57', '#3357ff'],
+                        borderColor: '#fff',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true
+                }
+            });
+        }
+
+        // Sayfa yüklendiğinde grafiklerin render edilmesi
+        window.onload = () => {
+            renderCharts();
+            renderProducts();
+            renderUnits();
+        };
+
+        // Sidebar sekmesi değiştirme
+        function showSection(sectionId) {
+            let sections = document.querySelectorAll('.card');
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'block';
+        }
     </script>
 </body>
 </html>
